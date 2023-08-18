@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Contagem Regressiva de Ano Novo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+    }
+  
+    h1 {
+      margin-bottom: 20px;
+    }
+  
+    .countdown {
+      font-size: 48px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+  
+    .message {
+      font-size: 24px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>Contagem Regressiva de Ano Novo</h1>
+  <div class="countdown" id="countdown"></div>
+  <div class="message" id="message"></div>
+
+  <script>
+    var countdownElement = document.getElementById("countdown");
+    var messageElement = document.getElementById("message");
+    var count = 10;
+
+    function startCountdown() {
+      countdownElement.textContent = count;
+
+      var countdownInterval = setInterval(function() {
+        count--;
+
+        if (count > 0) {
+          countdownElement.textContent = count;
+        } else {
+          clearInterval(countdownInterval);
+          countdownElement.style.display = "none";
+          messageElement.textContent = "Feliz Ano Novo!";
+        }
+      }, 1000);
+    }
+
+    startCountdown();
+  </script>
+</body>
+</html>
